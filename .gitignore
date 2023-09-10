@@ -1,3 +1,5 @@
 images/
 s_images/
 static/
+.idea
+.DS_Store
