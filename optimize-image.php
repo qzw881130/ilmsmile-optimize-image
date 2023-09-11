@@ -8,7 +8,9 @@ if(!file_exists($wgetBin)) die('wget no exists!');
 $localImageRoot = dirname(__FILE__) ;
 
 $dstBaseUrl = 'https://www.ilmsmile.com';
-$uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+$uris = isset($_SERVER['REQUEST_URI']) ? parse_url($_SERVER['REQUEST_URI']) : ['path' => ''];
+$uri = $uris['path'];
+
 $uri = preg_replace('/(\.webp)$/', '', $uri);
 $ext = pathinfo($uri, PATHINFO_EXTENSION);
 //$newFile = md5($realUri) . '.' . $ext;
@@ -19,14 +21,16 @@ $subPath = preg_replace('/(\/[\w_]+\.\w+)$/', '', $uri);
 $newPath = $localImageRoot . $subPath;
 if(!file_exists($newPath)) mkdir($newPath, 0755, true);
 
-$newFilePath = $newPath . '/' . $newFile . '.' . $ext . '.webp';
+$newFilePath = $newPath . '/' . $newFile . '.' . $ext . ($ext != 'ico' ? '.webp' : '');
 $dstfileUrl = $dstBaseUrl . $uri;
 
 if(!file_exists($newFilePath)){
     $cmd = sprintf('%s -q "%s" -O %s', $wgetBin, $dstfileUrl, $newFilePath);
     system($cmd);
-    $oCmd = sprintf('%s -strip +profile "*"  -quality 65 %s %s', $convertBin, $newFilePath, $newFilePath);
-    system($oCmd);
+    if($ext != 'ico'){
+        $oCmd = sprintf('%s -strip +profile "*"  -quality 65 %s %s', $convertBin, $newFilePath, $newFilePath);
+        system($oCmd);
+    }
 }
 header('content-type:image/'.$ext);
 $content = file_get_contents($newFilePath);

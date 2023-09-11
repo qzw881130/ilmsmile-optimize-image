@@ -3,3 +3,6 @@ s_images/
 static/
 .idea
 .DS_Store
+cache
+EN
+upload
