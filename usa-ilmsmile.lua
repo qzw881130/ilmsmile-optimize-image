@@ -26,7 +26,7 @@ if eof then
     whole = string.gsub(whole, '(.png)', ".png.webp")
     whole = string.gsub(whole, '(.jpeg)', ".jpeg.webp")
     whole = string.gsub(whole, '(<div class="footer_copyrights">.-</div>)', "")
-    whole = string.gsub(whole, '(<ul class="news_rec">.-</ul>)', "")
+    whole = string.gsub(whole, '(<span class="f16 news_rec_time">.-</span>)', "")
     -- whole = string.gsub(whole, '(<div class="intro__benefits benefits "><div class="benefits__powered"><p class="benefits__by">.-</svg>Quality Motorhome Hire</li></ul></div>)', '')
     -- whole = string.gsub(whole, '(<div class="process__benefits benefits "><div class="benefits__powered"><p class="benefits__by">.-</svg>Quality Motorhome Hire</li></ul></div>)', '')
     -- whole = string.gsub(whole, '(https://www.motorhomehireperth.com)', domain)
