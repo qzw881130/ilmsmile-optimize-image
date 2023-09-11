@@ -27,7 +27,7 @@ $dstfileUrl = $dstBaseUrl . $uri;
 if(!file_exists($newFilePath)){
     $cmd = sprintf('%s -q "%s" -O %s', $wgetBin, $dstfileUrl, $newFilePath);
     //echo $cmd;exit;
-    //system($cmd);
+    system($cmd);
     if($ext != 'ico'){
         $oCmd = sprintf('%s -strip +profile "*" -quality 65 -resize 1920x %s %s', $convertBin, $newFilePath, $newFilePath);
         //echo $oCmd;exit;
