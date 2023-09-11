@@ -29,12 +29,9 @@ if eof then
     whole = string.gsub(whole, '(<span class="f16 news_rec_time">.-</span>)', "")
 
     ngx.log(ngx.INFO, "Host: " .. ngx.req.get_headers()["Host"])
-    if string.match(ngx.req.get_headers()["Host"], "localhost") then 
-        whole = string.gsub(whole, '(<link type="text/css" rel="stylesheet" href=")', '<link type="text/css" rel="stylesheet" href="' .. ngx.header.cssbaseurl)
-        whole = string.gsub(whole, '(<script type="text/javascript" src=")', '<script type="text/javascript" src="' .. ngx.header.jsbaseurl)
-    else
+    whole = string.gsub(whole, '(<link type="text/css" rel="stylesheet" href=")', '<link type="text/css" rel="stylesheet" href="' .. ngx.header.cssbaseurl)
+    whole = string.gsub(whole, '(<script type="text/javascript" src=")', '<script type="text/javascript" src="' .. ngx.header.jsbaseurl)
 
-    end
 
 
     -- whole = string.gsub(whole, '(<div class="intro__benefits benefits "><div class="benefits__powered"><p class="benefits__by">.-</svg>Quality Motorhome Hire</li></ul></div>)', '')
