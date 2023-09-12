@@ -44,17 +44,22 @@ if eof then
 
 
     if(ngx.var.uri == "/en/solution/template/DrTortho/") then
+        whole = string.gsub(whole, '(</head>)', '<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script></head>');
         local videodom = [[
             <section class="sec_box product_box" style="background-color: #f4f6f7;">
 			<div class="clearfix inner">
 				<div class="product_pic" style="width: 100%%">
 					<div class="product_pic_range">
-                    <video id='video' controls="controls" preload='none' width="800" poster="/videos/31_1694437232.jpg">
-                        <source id='mp4' src="/videos/31_1694437232.mp4" type='video/mp4' />
-                        <source id='webm' src="/videos/31_1694437232.webm" type='video/webm' />
-                        <source id='ogv' src="/videos/31_1694437232.ogv" type='video/ogg' />
-                        <p>Your user agent does not support the HTML5 Video element.</p>
-                    </video>
+                    <video id="video" controls crossorigin="true" width="800" preload="auto" poster="/videos/31_1694437232.jpg"></video>
+                    <script>
+                        var video = document.getElementById('video');
+                        var videoSrc = '/videos/31_1694437232/v.m3u8';
+                        if (Hls.isSupported()) {
+                            var hls = new Hls();
+                            hls.loadSource(videoSrc);
+                            hls.attachMedia(video);
+                        }
+                    </script>
 					</div>
 				</div>
 			</div>
@@ -64,17 +69,22 @@ if eof then
     end
 
     if(ngx.var.uri == "/en/solution/template/BiomechanicalSimulation/") then
+        whole = string.gsub(whole, '(</head>)', '<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script></head>');
         local videodom = [[
             <section class="sec_box product_box" style="background-color: #f4f6f7;">
 			<div class="clearfix inner">
 				<div class="product_pic" style="width: 100%%">
 					<div class="product_pic_range">
-                    <video id='video' controls="controls" preload='none' width="800" poster="/videos/30_1694437228.jpg">
-                        <source id='mp4' src="/videos/30_1694437228.mp4" type='video/mp4' />
-                        <source id='webm' src="/videos/30_1694437228.webm" type='video/webm' />
-                        <source id='ogv' src="/videos/30_1694437228.ogv" type='video/ogg' />
-                        <p>Your user agent does not support the HTML5 Video element.</p>
-                    </video>
+                        <video id="video" controls crossorigin="true" width="800" preload="auto" poster="/videos/30_1694437228.jpg"></video>
+                        <script>
+                            var video = document.getElementById('video');
+                            var videoSrc = '/videos/30_1694437228/v.m3u8';
+                            if (Hls.isSupported()) {
+                                var hls = new Hls();
+                                hls.loadSource(videoSrc);
+                                hls.attachMedia(video);
+                            }
+                        </script>
 					</div>
 				</div>
 			</div>
