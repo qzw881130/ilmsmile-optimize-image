@@ -4,5 +4,6 @@ static/
 .idea
 .DS_Store
 cache
-EN
+!/EN/static/fonts
+/En/*
 upload
