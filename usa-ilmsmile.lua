@@ -58,6 +58,11 @@ if eof then
                             var hls = new Hls();
                             hls.loadSource(videoSrc);
                             hls.attachMedia(video);
+                        }else{
+                            video.innerHTML = `<source id='mp4' src="/videos/31_1694437232.mp4" type='video/mp4' />
+                            <source id='webm' src="/videos/31_1694437232.webm" type='video/webm' />
+                            <source id='ogv' src="/videos/31_1694437232.ogv" type='video/ogg' />
+                            <p>Your user agent does not support the HTML5 Video element.</p>`;
                         }
                     </script>
 					</div>
@@ -84,7 +89,10 @@ if eof then
                                 hls.loadSource(videoSrc);
                                 hls.attachMedia(video);
                             }else{
-
+                                video.innerHTML = `<source id='mp4' src="/videos/30_1694437228.mp4" type='video/mp4' />
+                                <source id='webm' src="/videos/30_1694437228.webm" type='video/webm' />
+                                <source id='ogv' src="/videos/30_1694437228.ogv" type='video/ogg' />
+                                <p>Your user agent does not support the HTML5 Video element.</p>`;
                             }
                         </script>
 					</div>
