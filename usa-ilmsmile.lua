@@ -20,6 +20,16 @@ if eof then
     end
 
     ngx.log(ngx.INFO, "site: usa-lua:" .. domain)
+    ngx.log(ngx.INFO, "current-uri:" .. ngx.var.uri)
+
+    if(ngx.var.uri == "/EN/static/js/web.js") then
+        whole = string.gsub(whole, '(autoplay: {.-},)', "")
+        whole = string.gsub(whole, '(loop: true,)', "loop: false,")
+    end
+
+    if(ngx.var.uri == "/") then
+        whole = string.gsub(whole, '(<a href="/en/solution/template/luomu/" class="f16 sec_more product_more">)', '<a href="/en/solution/template/luomu/" class="f24 sec_more product_more">');
+    end
 
 
     whole = string.gsub(whole, '(.jpg)', ".jpg.webp")
@@ -33,16 +43,45 @@ if eof then
     whole = string.gsub(whole, '(<script type="text/javascript" src=")', '<script type="text/javascript" src="' .. ngx.header.jsbaseurl)
 
 
+    if(ngx.var.uri == "/en/solution/template/DrTortho/") then
+        local videodom = [[
+            <section class="sec_box product_box" style="background-color: #f4f6f7;">
+			<div class="clearfix inner">
+				<div class="product_pic" style="width: 100%%">
+					<div class="product_pic_range">
+                    <video id='video' controls="controls" preload='none' width="800" poster="/videos/31_1694437232.jpg">
+                        <source id='mp4' src="/videos/31_1694437232.mp4" type='video/mp4' />
+                        <source id='webm' src="/videos/31_1694437232.webm" type='video/webm' />
+                        <source id='ogv' src="/videos/31_1694437232.ogv" type='video/ogg' />
+                        <p>Your user agent does not support the HTML5 Video element.</p>
+                    </video>
+					</div>
+				</div>
+			</div>
+		</section>
+        ]]
+        whole = string.gsub(whole, '(<section class="sec_box product_box product_even ">)', videodom .. '<section class="sec_box product_box product_even ">');
+    end
 
-    -- whole = string.gsub(whole, '(<div class="intro__benefits benefits "><div class="benefits__powered"><p class="benefits__by">.-</svg>Quality Motorhome Hire</li></ul></div>)', '')
-    -- whole = string.gsub(whole, '(<div class="process__benefits benefits "><div class="benefits__powered"><p class="benefits__by">.-</svg>Quality Motorhome Hire</li></ul></div>)', '')
-    -- whole = string.gsub(whole, '(https://www.motorhomehireperth.com)', domain)
-
-    -- whole = string.gsub(whole, '(.search__bar{margin)', '.search__bar{display:none;margin')
-    -- whole = string.gsub(whole, '(.search__bar{display:flex;)', '.search__bar{display:none;')
-
-    -- whole = string.gsub(whole, '(.powered{font%-size:1.3125rem;line%-height:1.2380952381;display:flex;)', '.powered{font-size:1.3125rem;line-height:1.2380952381;display:none;')
-    -- whole = string.gsub(whole, '(<p class="cta__text">%sLearn how to book through Camplify or look at our Motorhomes.</p>)', '')
+    if(ngx.var.uri == "/en/solution/template/BiomechanicalSimulation/") then
+        local videodom = [[
+            <section class="sec_box product_box" style="background-color: #f4f6f7;">
+			<div class="clearfix inner">
+				<div class="product_pic" style="width: 100%%">
+					<div class="product_pic_range">
+                    <video id='video' controls="controls" preload='none' width="800" poster="/videos/30_1694437228.jpg">
+                        <source id='mp4' src="/videos/30_1694437228.mp4" type='video/mp4' />
+                        <source id='webm' src="/videos/30_1694437228.webm" type='video/webm' />
+                        <source id='ogv' src="/videos/30_1694437228.ogv" type='video/ogg' />
+                        <p>Your user agent does not support the HTML5 Video element.</p>
+                    </video>
+					</div>
+				</div>
+			</div>
+		</section>
+        ]]
+        whole = string.gsub(whole, '(</main>)', videodom .. '</main>');
+    end
 
     ngx.arg[1] = whole
     ngx.arg[2] = true
