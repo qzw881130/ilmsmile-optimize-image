@@ -44,13 +44,13 @@ if eof then
 
 
     if(ngx.var.uri == "/en/solution/template/DrTortho/") then
-        whole = string.gsub(whole, '(</head>)', '<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script></head>');
+        whole = string.gsub(whole, '(</head>)', '<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hls.js@1"></script></head>');
         local videodom = [[
             <section class="sec_box product_box" style="background-color: #f4f6f7;">
 			<div class="clearfix inner">
 				<div class="product_pic" style="width: 100%%">
 					<div class="product_pic_range">
-                    <video id="video" controls crossorigin="true" width="100%" preload="auto" poster="/videos/31_1694437232.jpg"></video>
+                    <video id="video" controls crossorigin="true" width="100%%" preload="auto" poster="/videos/31_1694437232.jpg"></video>
                     <script>
                         var video = document.getElementById('video');
                         var videoSrc = '/videos/31_1694437232/v.m3u8';
@@ -69,13 +69,13 @@ if eof then
     end
 
     if(ngx.var.uri == "/en/solution/template/BiomechanicalSimulation/") then
-        whole = string.gsub(whole, '(</head>)', '<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script></head>');
+        whole = string.gsub(whole, '(</head>)', '<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hls.js@1"></script></head>');
         local videodom = [[
             <section class="sec_box product_box" style="background-color: #f4f6f7;">
 			<div class="clearfix inner">
 				<div class="product_pic" style="width: 100%%">
 					<div class="product_pic_range">
-                        <video id="video" controls crossorigin="true" width="100%" preload="auto" poster="/videos/30_1694437228.jpg"></video>
+                        <video id="video" controls crossorigin="true" width="100%%" preload="auto" poster="/videos/30_1694437228.jpg"></video>
                         <script>
                             var video = document.getElementById('video');
                             var videoSrc = '/videos/30_1694437228/v.m3u8';
