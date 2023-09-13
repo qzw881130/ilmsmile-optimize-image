@@ -16,7 +16,7 @@ $twig = new \Twig\Environment($loader, []);
 $body = $twig->render('mail-template.html.twig', [
     'toemail' => $toEmail,
     'name' => $name,
-    'message' => $message,
+    'message' => str_replace("\n", "<br/>", $message),
     'date' => date('Y-m-d H:i:s')
 ]);
 
