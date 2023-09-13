@@ -13,6 +13,9 @@ $message = $_POST['q4_message'] ?? '';
 $loader = new \Twig\Loader\FilesystemLoader(SRC_ROOT . '/contact-us');
 $twig = new \Twig\Environment($loader, []);
 
+//print_r($_SERVER);exit;
+//$baseUrl = $_SERVER['REQUEST_SCHEME']  $_SERVER['HTTP_HOST'];
+
 $body = $twig->render('mail-template.html.twig', [
     'toemail' => $toEmail,
     'name' => $name,
