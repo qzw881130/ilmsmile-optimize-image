@@ -43,7 +43,7 @@ try {
     $mail->AltBody = '';
 
     $mail->send();
-    header('Location: /contact-us/finish.php');
+  //  header('Location: /contact-us/finish.php');
 } catch (Exception $e) {
     die("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
 }
