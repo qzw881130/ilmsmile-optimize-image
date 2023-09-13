@@ -17,6 +17,7 @@ $baseUrl = sprintf('%s://%s', $_SERVER['REQUEST_SCHEME'] ,  $_SERVER['HTTP_HOST'
 
 $body = $twig->render('mail-template.html.twig', [
     'baseUrl' => $baseUrl,
+    'styles' => file_get_contents(SRC_ROOT . '/contact-us/styles.css'),
     'toemail' => $toEmail,
     'name' => $name,
     'message' => str_replace("\n", "<br/>", $message),
