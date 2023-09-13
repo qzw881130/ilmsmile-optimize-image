@@ -1,0 +1,22 @@
+{
+    "name": "ilmsmile/ilmsmile",
+    "description": "ilmsmile proxy",
+    "type": "project",
+    "require": {
+        "php": "^7.3|^8.0",
+        "phpmailer/phpmailer": "^6.8",
+        "symfony/dotenv": "^6.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ilmsmile\\Ilmsmile\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "qianzhiwei",
+            "email": "380659419@qq.com"
+        }
+    ]
+}

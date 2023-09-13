@@ -7,3 +7,5 @@ cache
 !/EN/static/fonts
 /En/*
 upload
+/vendor/
+.env
