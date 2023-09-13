@@ -8,15 +8,7 @@
     <meta property="og:description" content="Please click the link to complete this form." >
     <meta name="slack-app-id" content="AHNMASS8M">
     <meta property="og:image" content="https://cdn.jotfor.ms/assets/img/landing/opengraph.png" />
-    <link rel="shortcut icon" href="https://cdn.jotfor.ms/assets/img/favicons/favicon-2021-light%402x.png">
-    <link rel="apple-touch-icon" href="https://cdn.jotfor.ms/assets/img/favicons/favicon-2021-light%402x.png">
-    <script>
-        var favicon = document.querySelector('link[rel="shortcut icon"]');
-        window.isDarkMode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        if(favicon && window.isDarkMode) {
-            favicon.href = favicon.href.replaceAll('favicon-2021-light%402x.png', 'favicon-2021-dark%402x.png');
-        }
-    </script><link rel="canonical" href="https://alt.jotfor.ms/232554068008454" />
+    <link rel="canonical" href="https://alt.jotfor.ms/232554068008454" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
     <meta name="HandheldFriendly" content="true" />
     <title>Contact Us</title>
@@ -60,36 +52,7 @@
                     </div>
                 </div>
             </li>
-<!--            <li class="form-line" data-type="control_widget" id="id_7"><label class="form-label form-label-top form-label-auto" id="label_7" for="input_7" aria-hidden="true"> </label>-->
-<!--                <div id="cid_7" class="form-input-wide" data-layout="full">-->
-<!--                    <div data-widget-name="Show Map Location" style="width:100%;text-align:Left;overflow-x:auto" data-component="widget-field"><iframe data-client-id="5374688fa2c8bddc16000019" title="Show Map Location" frameBorder="0" scrolling="no" allowtransparency="true" allow="geolocation; microphone; camera; autoplay; encrypted-media; fullscreen" data-type="iframe" class="custom-field-frame" id="customFieldFrame_7" src="" style="max-width:600px;border:none;width:100%;height:300px" data-width="600" data-height="300"></iframe>-->
-<!--                        <div class="widget-inputs-wrapper"><input type="hidden" id="input_7" class="form-hidden form-widget  " name="q7_input7" value="" /><input type="hidden" id="widget_settings_7" class="form-hidden form-widget-settings" value="%5B%7B%22name%22%3A%22lat%22%2C%22value%22%3A%229.9114543%22%7D%2C%7B%22name%22%3A%22lng%22%2C%22value%22%3A%22126.0497553%22%7D%2C%7B%22name%22%3A%22zoom%22%2C%22value%22%3A%2210%22%7D%2C%7B%22name%22%3A%22addressText%22%2C%22value%22%3A%22Please%20enter%20your%20Google%20Map%20API%20Key%5Cnin%20the%20settings%20in%20order%20for%20the%20MAP%20to%20work.%22%7D%2C%7B%22name%22%3A%22customCSS%22%2C%22value%22%3A%22%23addressContainer%20%7B%5Cnwidth%3A%20100%25%3B%5Cn%7D%22%7D%5D" data-version="2" /></div>-->
-<!--                        <script type="text/javascript">-->
-<!--                            setTimeout(function()-->
-<!--                            {-->
-<!--                                var _cFieldFrame = document.getElementById("customFieldFrame_7");-->
-<!--                                if (_cFieldFrame)-->
-<!--                                {-->
-<!--                                    _cFieldFrame.onload = function()-->
-<!--                                    {-->
-<!--                                        if (typeof widgetFrameLoaded !== 'undefined')-->
-<!--                                        {-->
-<!--                                            widgetFrameLoaded(7,-->
-<!--                                                {-->
-<!--                                                    "formID": 232554068008454-->
-<!--                                                })-->
-<!--                                        }-->
-<!--                                    };-->
-<!--                                    _cFieldFrame.src = "//widgets.jotform.io/mapAddress/?qid=7&ref=" +-->
-<!--                                        encodeURIComponent(window.location.protocol + "//" + window.location.host) + '' + '' + '' +-->
-<!--                                        '&injectCSS=' + encodeURIComponent(window.location.search.indexOf("ndt=1") > -1);-->
-<!--                                    _cFieldFrame.addClassName("custom-field-frame-rendered");-->
-<!--                                }-->
-<!--                            }, 0);-->
-<!--                        </script>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </li>-->
+
             <li class="form-line" data-type="control_fullname" id="id_9"><label class="form-label form-label-top form-label-auto" id="label_9" for="first_9" aria-hidden="false"> Full Name </label>
                 <div id="cid_9" class="form-input-wide" data-layout="full">
                     <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_9" name="q9_fullName[first]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_9 given-name" size="10" value="" data-component="first" aria-labelledby="label_9 sublabel_9_first" /><label class="form-sub-label" for="first_9" id="sublabel_9_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_9" name="q9_fullName[last]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_9 family-name" size="15" value="" data-component="last" aria-labelledby="label_9 sublabel_9_last" /><label class="form-sub-label" for="last_9" id="sublabel_9_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
@@ -113,7 +76,7 @@
         JotForm.showJotFormPowered = "new_footer";
     </script>
     <script>
-        JotForm.poweredByText = "Powered by Jotform";
+        JotForm.poweredByText = "";
     </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="232554068008454" />
     <script type="text/javascript">
         var all_spc = document.querySelectorAll("form[id='232554068008454'] .si" + "mple" + "_spc");

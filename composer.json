@@ -5,7 +5,8 @@
     "require": {
         "php": "^7.3|^8.0",
         "phpmailer/phpmailer": "^6.8",
-        "symfony/dotenv": "^6.0"
+        "symfony/dotenv": "^6.0",
+        "twig/twig": "^3.0"
     },
     "license": "MIT",
     "autoload": {

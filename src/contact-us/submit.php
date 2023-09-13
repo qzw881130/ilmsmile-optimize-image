@@ -22,19 +22,22 @@ $toEmail = $_POST['q3_email'] ?? '';
 $name = ($_POST['q9_fullName']['first'] ?? $_POST['q9_fullName']['first']) . ' ' . ($_POST['q9_fullName']['last'] ?? $_POST['q9_fullName']['last']);
 $message = $_POST['q4_message'] ?? '';
 
-$message = "<b>Test Message</b>";
+$message = "Test Message";
 
-$body = <<<EOF
-    Hi,
-    Guest Email: $toEmail
-    Name: $name
-    Message: $message
-EOF;
+$loader = new \Twig\Loader\FilesystemLoader(SRC_ROOT . '/contact-us');
+$twig = new \Twig\Environment($loader, []);
+
+$body = $twig->render('mail-template.html.twig', [
+    'toemail' => $toEmail,
+    'name' => $name,
+    'message' => $message,
+    'date' => date('Y-m-d H:i:s')
+]);
 
 /*https://github.com/PHPMailer/PHPMailer*/
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->SMTPDebug = $_SERVER['IS_DEBUG_MAIL'] ?? 0;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = $_SERVER['MAIL_HOST'];                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -51,8 +54,7 @@ try {
     $mail->AltBody = '';
 
     $mail->send();
-    echo 'Message has been sent';
-    header('Location: finish.php');
+    header('Location: /contact-us/finish.php');
 } catch (Exception $e) {
     die("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
 }
