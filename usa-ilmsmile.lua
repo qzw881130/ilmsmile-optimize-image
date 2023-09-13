@@ -31,6 +31,14 @@ if eof then
         whole = string.gsub(whole, '(<a href="/en/solution/template/luomu/" class="f16 sec_more product_more">)', '<a href="/en/solution/template/luomu/" class="f24 sec_more product_more">');
     end
 
+    if(ngx.var.uri == "/EN/contact/") then
+        whole = string.gsub(whole, '(<div class="clearfix inner inner_w2">.-</div>.-</section>)', [[
+            <div class="clearfix inner inner_w2">
+            <iframe src="/contact-us/" title="Contact Us"  onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:200px;width:100%%;border:none;overflow:hidden;"></iframe>
+            </div></section>
+        ]]);
+    end
+
 
     whole = string.gsub(whole, '(.jpg)', ".jpg.webp")
     whole = string.gsub(whole, '(.png)', ".png.webp")

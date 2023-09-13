@@ -1,18 +1,6 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
-
-//    [formID] => 232554068008454
-//    [q9_fullName] => Array
-//    (
-            //    [first] => 钱
-            //    [last] => 志伟
-//    )
-//    [q3_email] => qianzhiwei5921@gmail.com
-//    [q4_message] => hi, 我想问一些事。
-
 
 require_once '../../define.php';
 
@@ -21,8 +9,6 @@ $mail = new PHPMailer(true);
 $toEmail = $_POST['q3_email'] ?? '';
 $name = ($_POST['q9_fullName']['first'] ?? $_POST['q9_fullName']['first']) . ' ' . ($_POST['q9_fullName']['last'] ?? $_POST['q9_fullName']['last']);
 $message = $_POST['q4_message'] ?? '';
-
-$message = "Test Message";
 
 $loader = new \Twig\Loader\FilesystemLoader(SRC_ROOT . '/contact-us');
 $twig = new \Twig\Environment($loader, []);
@@ -36,7 +22,6 @@ $body = $twig->render('mail-template.html.twig', [
 
 /*https://github.com/PHPMailer/PHPMailer*/
 try {
-    //Server settings
     $mail->SMTPDebug = $_SERVER['IS_DEBUG_MAIL'] ?? 0;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = $_SERVER['MAIL_HOST'];                     //Set the SMTP server to send through
