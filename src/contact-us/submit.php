@@ -20,7 +20,7 @@ $body = $twig->render('mail-template.html.twig', [
     'styles' => file_get_contents(SRC_ROOT . '/contact-us/styles.css'),
     'toemail' => $toEmail,
     'name' => $name,
-    'message' => str_replace("\n", "<br/>", $message),
+    'message' => nl2br($message),
     'date' => date('Y-m-d H:i:s')
 ]);
 
@@ -43,7 +43,7 @@ try {
     $mail->AltBody = '';
 
     $mail->send();
-  //  header('Location: /contact-us/finish.php');
+    header('Location: /contact-us/finish.php');
 } catch (Exception $e) {
     die("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
 }
