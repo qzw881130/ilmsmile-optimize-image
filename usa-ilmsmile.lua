@@ -109,6 +109,7 @@ if eof then
 		</section>
         ]]
         whole = string.gsub(whole, '(</main>)', videodom .. '</main>');
+        whole = string.gsub(whole, '(oral doctors)', 'dentists');
     end
 
     ngx.arg[1] = whole
